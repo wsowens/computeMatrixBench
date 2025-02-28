@@ -1,0 +1,26 @@
+Testing deeptools computeMatrix reference-point against Will's ~200 line script
++ date
+Mon Mar  3 08:05:56 PM EST 2025
++ : 'Testing Will'\''s script with this version of bigtools'
++ bigtools --version
+bigtools 0.5.5
++ ./compute_matrix_faster.py input/random.bigWig input/random_genes.bed
+computing matrix
+
+real	0m1.841s
+user	0m2.906s
+sys	0m0.138s
++ : 'Testing deeptools computeMatrix'
++ deeptools --version
+deeptools 3.5.6
+++ basename output/deeptools.mat.gz .mat.gz
++ OUT_MAT_BS1=output/deeptools.bs1.mat.gz
++ computeMatrix reference-point -bs 1 -S input/random.bigWig -o output/deeptools.bs1.mat.gz -R input/random_genes.bed
+using local install of computeMatrix
+
+real	2m4.223s
+user	2m3.890s
+sys	0m0.240s
++ set +x
+Confirming that matrices are the same...
+[0;32mSUCCESS! :)[0m
