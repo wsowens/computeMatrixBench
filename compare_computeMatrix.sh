@@ -12,8 +12,7 @@ echo "Testing deeptools computeMatrix reference-point against Will's ~200 line s
 set -x
 date
 
-: "Testing Will's script with this version of bigtools"
-bigtools --version
+: "Testing Will's script"
 time ./compute_matrix_faster.py "$TEST_BW" "$TEST_BED" > "$MY_MAT"
 
 : "Testing deeptools computeMatrix"
